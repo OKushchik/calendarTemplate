@@ -2,7 +2,7 @@ import { dateFormatter } from "./utils/dateUtils.js";
 
 export function renderCalendar(currentDate) {
   const outputCalendar = document.querySelector(".outputCalendar");
-  let outputCalendarHTML = ``;
+  let outputCalendarHTML = `<td><button class="table-btn">add vacation</button></td>`;
   let daysInCurrentMonth = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth() + 1,
@@ -31,5 +31,6 @@ export function renderCalendar(currentDate) {
         <span class="outputDate">${date}</span>
         </td>`;
   }
+  outputCalendarHTML += `<td>sum</td>`
   outputCalendar.innerHTML = outputCalendarHTML;
 }
