@@ -1,4 +1,5 @@
-import { dateFormatter } from "./utils";
+
+import { dateFormatter } from "./utils/dateUtils.js";
 
 export function renderCalendar(currentDate) {
   const outputCalendar = document.querySelector(".outputCalendar");
