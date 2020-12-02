@@ -11,7 +11,7 @@ export function renderCalendar(currentDate) {
 
   const chosenMonth = document.querySelector(".chosenMonth");
   chosenMonth.innerHTML = dateFormatter
-    .format(new Date(currentDate))
+    .format(new Date(currentDate ))
     .replace(",", "")
     .split(" ")[1];
 
@@ -19,7 +19,7 @@ export function renderCalendar(currentDate) {
     let chosenDate = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),
-      i,
+      i ,
     );
     const [dayName, , date] = dateFormatter
       .format(chosenDate)
