@@ -3,6 +3,7 @@ console.log('s')
 let currentDate = new Date();
 
 renderCalendar(currentDate);
+console.log('hello')
 
 /*
 const departmentTeams = [
