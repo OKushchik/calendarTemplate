@@ -10,10 +10,11 @@ export function renderCalendar(currentDate) {
   ).getDate();
 
   const chosenMonth = document.querySelector(".chosenMonth");
-  chosenMonth.innerHTML = dateFormatter
+  let currentMonth = dateFormatter
     .format(new Date(currentDate))
     .replace(",", "")
     .split(" ")[1];
+    chosenMonth.innerHTML =  currentMonth + ' ' + currentDate.getFullYear()
 
   for (let i = 1; i <= daysInCurrentMonth; i++) {
     let chosenDate = new Date(

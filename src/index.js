@@ -6,15 +6,16 @@ let next = document.querySelector('.next')
 
 prev.addEventListener('click', function() {
   currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,currentDate.getDate());
+  console.log(currentDate)
   renderCalendar(currentDate);
 })
 next.addEventListener('click', function() {
   currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,currentDate.getDate());
+  console.log(currentDate)
   renderCalendar(currentDate);
 })
 
 renderCalendar(currentDate);
-console.log('hello')
 
 /*
 const departmentTeams = [
