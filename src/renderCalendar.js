@@ -1,4 +1,3 @@
-
 import { dateFormatter } from "./utils/dateUtils.js";
 
 export function renderCalendar(currentDate) {
