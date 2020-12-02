@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> da5b2e8db64def6d44684a975e725a9e6a02c795
 import { dateFormatter } from "./utils/dateUtils.js";
 
 export function renderCalendar(currentDate) {
