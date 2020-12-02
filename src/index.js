@@ -1,4 +1,4 @@
-import { renderCalendar } from "./renderCalendar";
+import { renderCalendar } from "./renderCalendar.js";
 
 let currentDate = new Date();
 
