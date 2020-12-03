@@ -20,7 +20,7 @@ body {
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   margin: 5vh 15px;
-  min-width: 135px;
+  min-width: 140px;
   text-align: center;
 }
 
@@ -52,7 +52,7 @@ body {
   border: 1px solid rgb(192, 192, 192);
 }
 .outputItem:not(:first-of-type) {
-  border-left: none;
+  border-right: none;
 }
 
 .weekend {
@@ -72,7 +72,6 @@ body {
 }
 .month-picker button:hover {
   cursor: pointer;
-  color: gray;
 }
 .month-picker button:focus {
   outline: none;
@@ -95,9 +94,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid rgb(192, 192, 192);
-  border-right: 1px solid rgb(192, 192, 192);
-  border-bottom: 1px solid rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
   padding: 8px 6px;
   background: #f0f0f0;
 }

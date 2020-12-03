@@ -2,7 +2,7 @@ import { dateFormatter } from "./utils/dateUtils.js";
 
 export function renderCalendar(currentDate) {
   const outputCalendar = document.querySelector(".outputCalendar");
-
+  
   let outputCalendarHTML='';
   let daysInCurrentMonth = new Date(
     currentDate.getFullYear(),
@@ -38,5 +38,5 @@ export function renderCalendar(currentDate) {
 
   outputCalendar.innerHTML = outputCalendarHTML;
   outputCalendar.insertAdjacentHTML("afterbegin",`<td><button class="table-btn">+ Add vacation</button></td>`);
-  outputCalendar.insertAdjacentHTML('beforeend','<td class="table__sum" > Sum </td>')
+  outputCalendar.insertAdjacentHTML('beforeend','<td class="table__sum " > Sum </td>')
 }
