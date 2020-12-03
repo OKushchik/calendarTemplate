@@ -72,6 +72,8 @@ table tr{
 .employeeHeader, .groupHeader{
   min-width: 215px;
   border: 1px solid rgb(192, 192, 192);
+  text-align: left;
+  padding: 5px 10px;
 }
 .team-table{
   margin-bottom: 60px;
@@ -107,6 +109,9 @@ table tr{
   margin-bottom: 10px;
   font-size:14px;
   line-height: 21px;
+}
+.table-btn:hover {
+  cursor: pointer;
 }
 
 .table__sum{

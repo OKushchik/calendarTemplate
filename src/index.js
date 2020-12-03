@@ -18,16 +18,19 @@ const departmentTeams = [
   {
     name: "Frontend Team",
     percentageOfAbsent: 0,
+    color: 'rgba(155, 153, 255, .3)',
     members: [{ name: "FE_Team_User1" },{ name: "FE_Team_User2" },{ name: "FE_Team_User3" },{ name: "FE_Team_User4" },{ name: "FE_Team_User5" },],
   },
   {
     name: "Designers",
     percentageOfAbsent: 5,
+    color: 'rgba(122, 175, 255, .3)',
     members: [{ name: "Des_Team_User1" },{ name: "Des_Team_User2" },{ name: "Des_Team_User3" },{ name: "Des_Team_User4" },{ name: "Des_Team_User5" },{ name: "Des_Team_User6" },{ name: "Des_Team_User7" }],
   },
   {
     name: "Backend Team",
     percentageOfAbsent: 5,
+    color: 'rgba(255, 153, 153, .3)',
     members: [{ name: "Des_Team_User1" },{ name: "Des_Team_User2" },{ name: "Des_Team_User3" },{ name: "Des_Team_User4" }],
   },
 ];

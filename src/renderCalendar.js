@@ -53,13 +53,14 @@ export function renderEmployees(currentDate, departmentTeams){
     0,
   ).getDate();
   for(let item of departmentTeams){
-    let color = Math.floor(Math.random()*16777215).toString(16);
+    let color = item.color;
+    // let color = Math.floor(Math.random()*16777215).toString(16);
     let mainTable = document.createElement('table');
     mainTable.setAttribute("cellspacing", "0");
     mainTable.className = 'team-table';
     let row = document.createElement('tr');
-    row.style.background = `#${color}`;
-    let html = `<td class='groupHeader'  style='border-left: 3px solid #${color};'>${item.name}</td>`;
+    row.style.background = `${color}`;
+    let html = `<th class='groupHeader'  style='border-left: 3px solid ${color};'>${item.name}</th>`;
     for (let i=1; i<=amountOfDays;i++){
       let chosenDate = new Date(
         currentDate.getFullYear(),
@@ -78,7 +79,7 @@ export function renderEmployees(currentDate, departmentTeams){
     }
     for(let elem of item.members){
       let row = document.createElement('tr');
-      let html = `<td class='employeeHeader' style='border-left: 3px solid #${color};'>${elem.name}</td>`;
+      let html = `<td class='employeeHeader' style='border-left: 3px solid ${color};'>${elem.name}</td>`;
       for (let i=1; i<=amountOfDays;i++){
         let chosenDate = new Date(
           currentDate.getFullYear(),
