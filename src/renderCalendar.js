@@ -3,8 +3,7 @@ import { dateFormatter } from "./utils/dateUtils.js";
 export function renderCalendar(currentDate) {
   const outputCalendar = document.querySelector(".outputCalendar");
 
-  let outputCalendarHTML = `<td><button class="table-btn">+ Add vacation</button></td>`;
-
+  let outputCalendarHTML='';
   let daysInCurrentMonth = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth() + 1,
@@ -12,10 +11,12 @@ export function renderCalendar(currentDate) {
   ).getDate();
 
   const chosenMonth = document.querySelector(".chosenMonth");
-  chosenMonth.innerHTML = dateFormatter
-    .format(new Date(currentDate ))
+  let currentMonth = dateFormatter
+    .format(new Date(currentDate))
     .replace(",", "")
     .split(" ")[1];
+    chosenMonth.innerHTML =  currentMonth + ' ' + currentDate.getFullYear()
+
 
   for (let i = 1; i <= daysInCurrentMonth; i++) {
     let chosenDate = new Date(
@@ -34,6 +35,8 @@ export function renderCalendar(currentDate) {
         </td>`;
   };
 
+
   outputCalendar.innerHTML = outputCalendarHTML;
-  outputCalendar.innerHTML += '<td class="table__sum" > Sum </td>'
+  outputCalendar.insertAdjacentHTML("afterbegin",`<td><button class="table-btn">+ Add vacation</button></td>`);
+  outputCalendar.insertAdjacentHTML('beforeend','<td class="table__sum" > Sum </td>')
 }
