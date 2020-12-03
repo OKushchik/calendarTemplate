@@ -1,20 +1,16 @@
 import { renderCalendar } from "./renderCalendar.js";
 import { renderEmployees } from "./renderCalendar.js";
-let currentDate = new Date();
+
+const now = new Date;
+const month = now.getMonth();
+const year = now.getFullYear();
+let currentDate = new Date(year,month+1,0);
+
 
 let prev = document.querySelector('.prev')
 let next = document.querySelector('.next')
 
-prev.addEventListener('click', function() {
-  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,currentDate.getDate());
-  renderCalendar(currentDate);
-})
-next.addEventListener('click', function() {
-  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,currentDate.getDate());
-  renderCalendar(currentDate);
-})
 
-renderCalendar(currentDate);
 
 const departmentTeams = [
   {
@@ -33,6 +29,19 @@ const departmentTeams = [
     members: [{ name: "Des_Team_User1" },{ name: "Des_Team_User2" },{ name: "Des_Team_User3" },{ name: "Des_Team_User4" }],
   },
 ];
+renderCalendar(currentDate);
 renderEmployees(currentDate, departmentTeams);
 
-
+prev.addEventListener('click', function() {
+  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,currentDate.getDate());
+  renderCalendar(currentDate);
+  renderCalendar(currentDate);
+  console.log(currentDate);
+  renderEmployees(currentDate, departmentTeams);
+})
+next.addEventListener('click', function() {
+  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,currentDate.getDate());
+  renderCalendar(currentDate);
+  console.log(currentDate);
+  renderEmployees(currentDate, departmentTeams);
+})
