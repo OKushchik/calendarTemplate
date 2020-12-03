@@ -32,5 +32,6 @@ export function renderCalendar(currentDate) {
         </td>`;
   }
   outputCalendarHTML += `<td>sum</td>`
+
   outputCalendar.innerHTML = outputCalendarHTML;
 }
