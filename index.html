@@ -6,16 +6,28 @@
   <title>Document</title>
   <link rel="stylesheet" href="src/styles.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="src/iconFonts/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <div id="app">
-  <button class="prev">prev</button>
-  <p class="chosenMonth"></p>
-  <button class="next">next</button>
+
+  <div class="month-picker">
+    <button class="prev">
+      <i class="icon icon-Arrow-2"></i>
+    </button>
+    <div class="month-text">
+      <p class="chosenMonth"></p>      
+      <p class="chosenYear"></p>     
+    </div>
+    <button class="next">
+      <i class="icon icon-Arrow-3"></i>
+    </button>
+  </div>
+
   <table>
-    <thead>
+    <thead class="calendar__head">
       <tr class="outputCalendar"></tr>
     </thead>
   </table>

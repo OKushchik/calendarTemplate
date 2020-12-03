@@ -17,9 +17,11 @@ body {
 }
 
 .chosenMonth {
-  font-size: 32px;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 5vh 15px;
+  min-width: 135px;
+  text-align: center;
 }
 
 .outputCalendar {
@@ -54,5 +56,48 @@ body {
 }
 
 .weekend {
+  background: #f0f0f0;
+}
+
+.month-picker {
+  display: flex;
+  align-items: center;
+}
+.month-picker button {
+  background-color: transparent;
+  display: inline;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+}
+.month-picker button:hover {
+  cursor: pointer;
+  color: gray;
+}
+.month-picker button:focus {
+  outline: none;
+}
+
+.table-btn{
+  width: 145px;
+  height: 40px;
+  background:#48BA46;
+  color:white;
+  border-color: transparent;
+  border-radius: 7px;
+  margin-right: 70px;
+  margin-bottom: 10px;
+  font-size:14px;
+  line-height: 21px;
+}
+
+.table__sum{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(192, 192, 192);
+  border-right: 1px solid rgb(192, 192, 192);
+  border-bottom: 1px solid rgb(192, 192, 192);
+  padding: 8px 6px;
   background: #f0f0f0;
 }
