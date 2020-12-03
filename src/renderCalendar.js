@@ -35,9 +35,6 @@ export function renderCalendar(currentDate) {
         </td>`;
 
   }
-  outputCalendarHTML += `<td>sum</td>`
-
-  };
 
 
 
@@ -45,6 +42,7 @@ export function renderCalendar(currentDate) {
   outputCalendar.insertAdjacentHTML("afterbegin",`<td><button class="table-btn">+ Add vacation</button></td>`);
   outputCalendar.insertAdjacentHTML('beforeend','<td class="table__sum " > Sum </td>')
 }
+
 
 export function renderEmployees(currentDate, departmentTeams){
   let tableContainer = document.querySelector('.table-container');
@@ -57,6 +55,7 @@ export function renderEmployees(currentDate, departmentTeams){
   for(let item of departmentTeams){
     let color = Math.floor(Math.random()*16777215).toString(16);
     let mainTable = document.createElement('table');
+    mainTable.setAttribute("cellspacing", "0");
     mainTable.className = 'team-table';
     let row = document.createElement('tr');
     row.style.background = `#${color}`;
@@ -75,6 +74,7 @@ export function renderEmployees(currentDate, departmentTeams){
       html+=`<td class="outputItem ${isWeekend ? "weekend" : ""}">`
       row.innerHTML=html;
       mainTable.appendChild(row);
+      row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
     }
     for(let elem of item.members){
       let row = document.createElement('tr');
@@ -93,6 +93,7 @@ export function renderEmployees(currentDate, departmentTeams){
         html+=`<td class="outputItem ${isWeekend ? "weekend" : ""}">`
         row.innerHTML=html;
         mainTable.appendChild(row);
+        row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
       }
     }
     console.log(amountOfDays)
