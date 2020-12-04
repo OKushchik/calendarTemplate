@@ -35,9 +35,10 @@ export function renderCalendar(currentDate) {
         </td>`;
 
   }
+
   outputCalendarHTML += `<td>sum</td>`
 
-  
+
 
 
 
@@ -45,6 +46,7 @@ export function renderCalendar(currentDate) {
   outputCalendar.insertAdjacentHTML("afterbegin",`<td><button class="table-btn">+ Add vacation</button></td>`);
   outputCalendar.insertAdjacentHTML('beforeend','<td class="table__sum " > Sum </td>')
 }
+
 
 export function renderEmployees(currentDate, departmentTeams){
   let tableContainer = document.querySelector('.table-container');
@@ -55,17 +57,23 @@ export function renderEmployees(currentDate, departmentTeams){
     0,
   ).getDate();
   for(let item of departmentTeams){
-    let color = Math.floor(Math.random()*16777215).toString(16);
+    let color = item.color;
+    // let color = Math.floor(Math.random()*16777215).toString(16);
     let mainTable = document.createElement('table');
+    mainTable.setAttribute("cellspacing", "0");
     mainTable.className = 'team-table';
     let row = document.createElement('tr');
-    row.style.background = `#${color}`;
+
+
     let name=item.name;
     if(item.name.includes('_')){
       let names = item.name.split('_');
       name=names.join(' ');
     }
     let html = `<th class='groupHeader'  style='border-left: 3px solid #${color};'>${name} <i class="icon icon-chevron-down-solid ${item.name}_header"></i> </th>`;
+    row.style.background = `${color}`;
+
+
     for (let i=1; i<=amountOfDays;i++){
       let chosenDate = new Date(
         currentDate.getFullYear(),
@@ -80,12 +88,15 @@ export function renderEmployees(currentDate, departmentTeams){
       html+=`<td class="outputItem ${isWeekend ? "weekend" : ""}">`
       row.innerHTML=html;
       mainTable.appendChild(row);
+      row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
     }
     for(let elem of item.members){
       let row = document.createElement('tr');
+
       let c = `${item.name}_row`;
       row.className = c;
       let html = `<td class='employeeHeader' style='border-left: 3px solid #${color};'>${elem.name}</td>`;
+
       for (let i=1; i<=amountOfDays;i++){
         let chosenDate = new Date(
           currentDate.getFullYear(),
@@ -100,6 +111,7 @@ export function renderEmployees(currentDate, departmentTeams){
         html+=`<td class="outputItem ${isWeekend ? "weekend" : ""}">`
         row.innerHTML=html;
         mainTable.appendChild(row);
+        row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
       }
     }
     console.log(amountOfDays)
