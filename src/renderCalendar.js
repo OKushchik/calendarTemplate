@@ -125,7 +125,9 @@ export function renderEmployees(currentDate, departmentTeams){
       for(let row of rows){
         row.classList.toggle('invisible');
       }
+      headerButton.classList.toggle('transform-arrow');
     })
+
   }
 
 
