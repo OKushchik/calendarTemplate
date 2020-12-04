@@ -125,7 +125,12 @@ table tr{
 .invisible{
   display: none;
 }
-.icon{
-  width: 20px;
-  height: 20px !important;
+.icon-chevron-down-solid {
+  padding: 5px 15px;
+}
+.icon-chevron-down-solid:hover {
+  cursor: pointer;
+}
+.transform-arrow {
+  transform: rotate(180deg);
 }

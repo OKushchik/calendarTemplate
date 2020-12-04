@@ -22,6 +22,7 @@ const departmentTeams = [
     members: [{ name: "FE_Team_User1" },{ name: "FE_Team_User2" },{ name: "FE_Team_User3" },{ name: "FE_Team_User4" },{ name: "FE_Team_User5" },],
   },
   {
+    id:'2',
     name: "Designers",
     percentageOfAbsent: 5,
     color: 'rgba(122, 175, 255, .3)',

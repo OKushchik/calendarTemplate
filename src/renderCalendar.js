@@ -36,7 +36,6 @@ export function renderCalendar(currentDate) {
 
   }
 
-  outputCalendarHTML += `<td>sum</td>`
 
 
 
@@ -89,7 +88,11 @@ export function renderEmployees(currentDate, departmentTeams){
       row.innerHTML=html;
       mainTable.appendChild(row);
       row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
+      
     }
+
+
+
     for(let elem of item.members){
       let row = document.createElement('tr');
 
@@ -122,6 +125,10 @@ export function renderEmployees(currentDate, departmentTeams){
       for(let row of rows){
         row.classList.toggle('invisible');
       }
+      headerButton.classList.toggle('transform-arrow');
     })
+
   }
+
+
 }
