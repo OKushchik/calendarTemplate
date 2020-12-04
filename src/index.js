@@ -39,15 +39,12 @@ renderCalendar(currentDate);
 renderEmployees(currentDate, departmentTeams);
 
 prev.addEventListener('click', function() {
-  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,currentDate.getDate());
+  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,1);
   renderCalendar(currentDate);
-  renderCalendar(currentDate);
-  console.log(currentDate);
   renderEmployees(currentDate, departmentTeams);
 })
 next.addEventListener('click', function() {
-  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,currentDate.getDate());
+  currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,1);
   renderCalendar(currentDate);
-  console.log(currentDate);
   renderEmployees(currentDate, departmentTeams);
 })
