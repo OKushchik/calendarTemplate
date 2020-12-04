@@ -36,6 +36,10 @@ export function renderCalendar(currentDate) {
 
   }
 
+  outputCalendarHTML += `<td>sum</td>`
+
+
+
 
 
   outputCalendar.innerHTML = outputCalendarHTML;
@@ -59,8 +63,17 @@ export function renderEmployees(currentDate, departmentTeams){
     mainTable.setAttribute("cellspacing", "0");
     mainTable.className = 'team-table';
     let row = document.createElement('tr');
+
+
+    let name=item.name;
+    if(item.name.includes('_')){
+      let names = item.name.split('_');
+      name=names.join(' ');
+    }
+    let html = `<th class='groupHeader'  style='border-left: 3px solid #${color};'>${name} <i class="icon icon-chevron-down-solid ${item.name}_header"></i> </th>`;
     row.style.background = `${color}`;
-    let html = `<th class='groupHeader'  style='border-left: 3px solid ${color};'>${item.name}</th>`;
+
+
     for (let i=1; i<=amountOfDays;i++){
       let chosenDate = new Date(
         currentDate.getFullYear(),
@@ -79,7 +92,11 @@ export function renderEmployees(currentDate, departmentTeams){
     }
     for(let elem of item.members){
       let row = document.createElement('tr');
-      let html = `<td class='employeeHeader' style='border-left: 3px solid ${color};'>${elem.name}</td>`;
+
+      let c = `${item.name}_row`;
+      row.className = c;
+      let html = `<td class='employeeHeader' style='border-left: 3px solid #${color};'>${elem.name}</td>`;
+
       for (let i=1; i<=amountOfDays;i++){
         let chosenDate = new Date(
           currentDate.getFullYear(),
@@ -99,5 +116,12 @@ export function renderEmployees(currentDate, departmentTeams){
     }
     console.log(amountOfDays)
     tableContainer.appendChild(mainTable);
+    let headerButton = document.querySelector(`.${item.name}_header`);
+    let rows = document.querySelectorAll(`.${item.name}_row`)
+    headerButton.addEventListener('click',()=>{
+      for(let row of rows){
+        row.classList.toggle('invisible');
+      }
+    })
   }
 }

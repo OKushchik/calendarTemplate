@@ -162,3 +162,7 @@ Generated using nucleoapp.com
   content: "\ea02";
 }
 
+.icon-chevron-down-solid::before {
+  content: "\ea03";
+}
+

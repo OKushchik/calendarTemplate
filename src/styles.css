@@ -122,3 +122,10 @@ table tr{
   padding: 8px 6px;
   background: #f0f0f0;
 }
+.invisible{
+  display: none;
+}
+.icon{
+  width: 20px;
+  height: 20px !important;
+}
