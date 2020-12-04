@@ -122,3 +122,15 @@ table tr{
   padding: 8px 6px;
   background: #f0f0f0;
 }
+.invisible{
+  display: none;
+}
+.icon-chevron-down-solid {
+  padding: 5px 15px;
+}
+.icon-chevron-down-solid:hover {
+  cursor: pointer;
+}
+.transform-arrow {
+  transform: rotate(180deg);
+}

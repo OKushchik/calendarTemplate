@@ -60,7 +60,10 @@ export function renderEmployees(currentDate, departmentTeams){
     mainTable.className = 'team-table';
     let row = document.createElement('tr');
     row.style.background = `${color}`;
-    let html = `<th class='groupHeader'  style='border-left: 3px solid ${color};'>${item.name}</th>`;
+    let html = `<th class='groupHeader'  style='border-left: 3px solid ${color};'>${item.name} <i class="icon icon-chevron-down-solid icon-${item.id}"></i> </th>`;
+ 
+
+
     for (let i=1; i<=amountOfDays;i++){
       let chosenDate = new Date(
         currentDate.getFullYear(),
@@ -76,9 +79,15 @@ export function renderEmployees(currentDate, departmentTeams){
       row.innerHTML=html;
       mainTable.appendChild(row);
       row.insertAdjacentHTML("beforeend", '<td class = "sumHead"></td>');
+      
     }
+
+
+
     for(let elem of item.members){
       let row = document.createElement('tr');
+      let c = `row-${item.id}`;
+      row.className = c;
       let html = `<td class='employeeHeader' style='border-left: 3px solid ${color};'>${elem.name}</td>`;
       for (let i=1; i<=amountOfDays;i++){
         let chosenDate = new Date(
@@ -99,5 +108,23 @@ export function renderEmployees(currentDate, departmentTeams){
     }
     console.log(amountOfDays)
     tableContainer.appendChild(mainTable);
+    
+ 
+   let headerButton = document.querySelector(`.icon-${item.id}`);
+   console.log(headerButton)
+   
+   let rows = document.querySelectorAll(`.row-${item.id}`)
+
+
+   headerButton.addEventListener('click',()=>{
+     for(let row of rows){
+       row.classList.toggle('invisible');
+       
+     }
+     headerButton.classList.toggle('transform-arrow');
+   })
+
   }
+
+
 }
